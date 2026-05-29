@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>MediaTek86</RootNamespace>
+    <AssemblyName>MediaTek86</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Company>MediaTek86</Company>
+    <Product>Gestion du personnel - MediaTek86</Product>
+  </PropertyGroup>
+
+</Project>
