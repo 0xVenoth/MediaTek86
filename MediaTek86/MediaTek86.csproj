@@ -9,6 +9,12 @@
     <LangVersion>latest</LangVersion>
     <Company>MediaTek86</Company>
     <Product>Gestion du personnel - MediaTek86</Product>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.33" />
+  </ItemGroup>
 
 </Project>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8a1d2c3e-4b5f-6a7c-8d9e-0f1a2b3c4d5e}</ProjectGuid>
+    <SHFBSchemaVersion>2017.9.26.0</SHFBSchemaVersion>
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <SHFBROOT Condition="'$(SHFBROOT)' == ''">$(MSBuildProjectDirectory)\.shfbtools\shfb\tools</SHFBROOT>
+    <OutputPath>Help\</OutputPath>
+    <HtmlHelpName>MediaTek86</HtmlHelpName>
+    <Language>fr-FR</Language>
+    <HelpFileFormat>Website</HelpFileFormat>
+    <FrameworkVersion>.NET Framework 4.7.2</FrameworkVersion>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\MediaTek86\bin\Debug\net472\MediaTek86.exe" />
+      <DocumentationSource sourceFile="..\MediaTek86\bin\Debug\net472\MediaTek86.xml" />
+    </DocumentationSources>
+    <HelpTitle>Documentation technique - MediaTek86 (Gestion du personnel)</HelpTitle>
+    <HelpFileVersion>1.0.0.0</HelpFileVersion>
+    <NamingMethod>Guid</NamingMethod>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
+    <NamespaceGrouping>False</NamespaceGrouping>
+    <SyntaxFilters>C#</SyntaxFilters>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <PresentationStyle>Default2022</PresentationStyle>
+    <CleanIntermediates>True</CleanIntermediates>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <IndentHtml>False</IndentHtml>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
+    <VisibleItems>Attributes, ExplicitInterfaceImplementations, Protected, ProtectedInternalAsProtected, NonBrowsable</VisibleItems>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="MediaTek86" isDocumented="True">Espace de noms racine de l'application MediaTek86 (gestion du personnel).</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="MediaTek86.bddmanager" isDocumented="True">Couche technique d'accès à la base de données MySQL (classe singleton BddManager).</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="MediaTek86.controleur" isDocumented="True">Contrôleur faisant le lien entre les vues et l'accès aux données.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="MediaTek86.dal" isDocumented="True">Couche d'accès aux données (DAL) répondant aux demandes du contrôleur.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="MediaTek86.modele" isDocumented="True">Classes métiers correspondant aux tables de la base de données.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="MediaTek86.vue" isDocumented="True">Interfaces graphiques de l'application (fenêtres Windows Forms).</NamespaceSummaryItem>
+    </NamespaceSummaries>
+  </PropertyGroup>
+  <ItemGroup>
+    <SHFBComponentPath Include="$(MSBuildProjectDirectory)\.shfbtools\netfx\tools\" />
+  </ItemGroup>
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>

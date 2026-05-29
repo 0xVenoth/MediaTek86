@@ -2,9 +2,14 @@ using System.Windows.Forms;
 
 namespace MediaTek86.vue
 {
-    // Fenêtre de gestion du personnel
+    /// <summary>
+    /// Fenêtre de gestion du personnel.
+    /// </summary>
     public partial class FrmGestionPersonnel : Form
     {
+        /// <summary>
+        /// Constructeur.
+        /// </summary>
         public FrmGestionPersonnel()
         {
             InitializeComponent();

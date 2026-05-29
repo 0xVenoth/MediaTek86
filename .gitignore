@@ -26,3 +26,10 @@ packages/
 # Misc
 *.cache
 *.tmp
+
+# Documentation technique (SHFB) : outils téléchargés et sortie brute
+# (seul le zip de la doc est versionné)
+Documentation/.shfbtools/
+Documentation/Help/
+Documentation/shfb.zip
+Documentation/netfx.zip
