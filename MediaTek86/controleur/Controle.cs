@@ -94,6 +94,18 @@ namespace MediaTek86.controleur
         }
 
         /// <summary>
+        /// Vérifie si une absence chevauche une autre absence du même personnel.
+        /// </summary>
+        /// <param name="absence">Absence à contrôler.</param>
+        /// <param name="enModification">True si on modifie une absence existante.</param>
+        /// <param name="ancienneDateDebut">Ancienne date de début (si modification).</param>
+        /// <returns>True s'il y a chevauchement, false sinon.</returns>
+        public bool AbsenceEnChevauchement(Absence absence, bool enModification, DateTime ancienneDateDebut)
+        {
+            return AccesDonnees.AbsenceEnChevauchement(absence, enModification, ancienneDateDebut);
+        }
+
+        /// <summary>
         /// Demande l'ajout d'une absence.
         /// </summary>
         /// <param name="absence">Absence à ajouter.</param>

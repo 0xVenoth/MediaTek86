@@ -208,6 +208,45 @@ namespace MediaTek86.dal
         }
 
         /// <summary>
+        /// Vérifie si une absence chevauche (se superpose à) une absence déjà
+        /// enregistrée pour le même personnel. Deux absences se chevauchent si
+        /// la date de début de l'une est avant la date de fin de l'autre, et
+        /// inversement. En cas de modification, on ne compare pas l'absence avec
+        /// elle-même (on l'exclut grâce à son ancienne date de début).
+        /// </summary>
+        /// <param name="absence">Absence à contrôler.</param>
+        /// <param name="enModification">True si on modifie une absence existante.</param>
+        /// <param name="ancienneDateDebut">Ancienne date de début (si modification).</param>
+        /// <returns>True s'il y a chevauchement, false sinon.</returns>
+        public static bool AbsenceEnChevauchement(Absence absence, bool enModification, DateTime ancienneDateDebut)
+        {
+            int nb = 0;
+            string req = "select count(*) as nb from absence ";
+            req += "where idpersonnel = @idpersonnel ";
+            req += "and datedebut < @datefin and datefin > @datedebut";
+            if (enModification == true)
+            {
+                req += " and datedebut <> @anciennedatedebut";
+            }
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", absence.IdPersonnel);
+            parameters.Add("@datedebut", absence.DateDebut);
+            parameters.Add("@datefin", absence.DateFin);
+            if (enModification == true)
+            {
+                parameters.Add("@anciennedatedebut", ancienneDateDebut);
+            }
+            BddManager curs = GetBddManager();
+            curs.ReqSelect(req, parameters);
+            if (curs.Read())
+            {
+                nb = Convert.ToInt32(curs.Field("nb"));
+            }
+            curs.Close();
+            return nb > 0;
+        }
+
+        /// <summary>
         /// Ajoute une absence dans la base de données.
         /// </summary>
         /// <param name="absence">Absence à ajouter.</param>

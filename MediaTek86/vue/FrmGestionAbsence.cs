@@ -183,16 +183,24 @@ namespace MediaTek86.vue
                 Motif motif = (Motif)cboMotif.SelectedItem;
                 Absence absence = new Absence(lePersonnel.IdPersonnel, dtpDateDebut.Value,
                     dtpDateFin.Value, motif.IdMotif, motif.Libelle);
-                if (enModification == true)
+                // On verifie que la nouvelle absence ne chevauche pas une absence existante.
+                if (controle.AbsenceEnChevauchement(absence, enModification, ancienneDateDebut) == true)
                 {
-                    controle.UpdateAbsence(absence, ancienneDateDebut);
+                    MessageBox.Show("Cette absence en chevauche une autre déjà enregistrée.", "Information");
                 }
                 else
                 {
-                    controle.AddAbsence(absence);
+                    if (enModification == true)
+                    {
+                        controle.UpdateAbsence(absence, ancienneDateDebut);
+                    }
+                    else
+                    {
+                        controle.AddAbsence(absence);
+                    }
+                    EnSaisie(false);
+                    RemplirListeAbsences();
                 }
-                EnSaisie(false);
-                RemplirListeAbsences();
             }
         }
 
