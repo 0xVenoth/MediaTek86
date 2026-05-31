@@ -72,6 +72,7 @@ namespace MediaTek86.vue
             this.btnAjouter.TabIndex = 2;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             //
             // btnModifier
             //
@@ -81,6 +82,7 @@ namespace MediaTek86.vue
             this.btnModifier.TabIndex = 3;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             //
             // btnSupprimer
             //
@@ -90,6 +92,7 @@ namespace MediaTek86.vue
             this.btnSupprimer.TabIndex = 4;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             //
             // btnGererAbsences
             //
@@ -99,6 +102,7 @@ namespace MediaTek86.vue
             this.btnGererAbsences.TabIndex = 5;
             this.btnGererAbsences.Text = "Gérer les absences";
             this.btnGererAbsences.UseVisualStyleBackColor = true;
+            this.btnGererAbsences.Click += new System.EventHandler(this.btnGererAbsences_Click);
             //
             // grpPersonnel
             //
@@ -211,6 +215,7 @@ namespace MediaTek86.vue
             this.btnEnregistrer.TabIndex = 10;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             //
             // btnAnnulerSaisie
             //
@@ -220,6 +225,7 @@ namespace MediaTek86.vue
             this.btnAnnulerSaisie.TabIndex = 11;
             this.btnAnnulerSaisie.Text = "Annuler";
             this.btnAnnulerSaisie.UseVisualStyleBackColor = true;
+            this.btnAnnulerSaisie.Click += new System.EventHandler(this.btnAnnulerSaisie_Click);
             //
             // FrmGestionPersonnel
             //
@@ -238,6 +244,7 @@ namespace MediaTek86.vue
             this.Name = "FrmGestionPersonnel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MediaTek86 - Gestion du personnel";
+            this.Load += new System.EventHandler(this.FrmGestionPersonnel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).EndInit();
             this.grpPersonnel.ResumeLayout(false);
             this.grpPersonnel.PerformLayout();
