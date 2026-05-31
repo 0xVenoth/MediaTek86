@@ -12,14 +12,26 @@ Le projet est structuré selon le modèle **MVC**, dans les packages suivants :
 | `vue` | Interfaces graphiques (fenêtres WinForms) |
 | `controleur` | Liaison entre les vues et l'accès aux données |
 | `modele` | Classes métier (Personnel, Service, Motif, Absence, Responsable) |
-| `bddmanager` | Gestionnaire d'accès à la base de données MySQL |
+| `dal` | Couche d'accès aux données : chaîne de connexion et requêtes SQL |
+| `bddmanager` | Gestionnaire technique de la connexion MySQL (singleton) |
+
+Le sens des appels est : **vue → controleur → dal (AccesDonnees) → bddmanager**.
+
+## Connexion à la base de données
+
+L'application se connecte à la base `mediatek86` (MySQL/Wampserver) avec l'utilisateur
+applicatif `mediatek86user`, qui ne possède que les droits SELECT, INSERT, UPDATE et DELETE.
+La chaîne de connexion se trouve dans `dal/AccesDonnees.cs`.
+
+Le mot de passe du responsable est stocké chiffré (SHA2 256 bits) dans la table `responsable` ;
+la vérification de la connexion est faite directement par MySQL avec la fonction `SHA2`.
 
 ## Interfaces (partie Vue)
 
 - **FrmConnexion** : connexion du responsable (login / mot de passe).
 - **FrmGestionPersonnel** : liste des personnels, ajout / modification / suppression,
   accès à la gestion des absences.
-- **FrmGestionAbsence** : liste et gestion des absences d'un personnel sélectionné.
+- **FrmGestionAbsence** : liste et gestion des absences du personnel sélectionné.
 
 ## Cas d'utilisation couverts
 
@@ -36,5 +48,6 @@ Le projet est structuré selon le modèle **MVC**, dans les packages suivants :
 
 - [x] Structure MVC + projet WinForms
 - [x] Codage du visuel des interfaces (partie Vue)
-- [ ] Couche d'accès aux données (bddmanager)
-- [ ] Contrôleurs et fonctionnalités (missions suivantes)
+- [x] Couche d'accès aux données (dal + bddmanager)
+- [x] Contrôleur
+- [x] Fonctionnalités des 8 cas d'utilisation (codées et testées)
