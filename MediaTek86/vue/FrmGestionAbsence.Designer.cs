@@ -68,6 +68,7 @@ namespace MediaTek86.vue
             this.btnAjouter.TabIndex = 2;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             //
             // btnModifier
             //
@@ -77,6 +78,7 @@ namespace MediaTek86.vue
             this.btnModifier.TabIndex = 3;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             //
             // btnSupprimer
             //
@@ -86,6 +88,7 @@ namespace MediaTek86.vue
             this.btnSupprimer.TabIndex = 4;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             //
             // btnFermer
             //
@@ -95,6 +98,7 @@ namespace MediaTek86.vue
             this.btnFermer.TabIndex = 5;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             //
             // grpAbsence
             //
@@ -175,6 +179,7 @@ namespace MediaTek86.vue
             this.btnEnregistrer.TabIndex = 6;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             //
             // btnAnnulerSaisie
             //
@@ -184,6 +189,7 @@ namespace MediaTek86.vue
             this.btnAnnulerSaisie.TabIndex = 7;
             this.btnAnnulerSaisie.Text = "Annuler";
             this.btnAnnulerSaisie.UseVisualStyleBackColor = true;
+            this.btnAnnulerSaisie.Click += new System.EventHandler(this.btnAnnulerSaisie_Click);
             //
             // FrmGestionAbsence
             //
@@ -202,6 +208,7 @@ namespace MediaTek86.vue
             this.Name = "FrmGestionAbsence";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MediaTek86 - Gestion des absences";
+            this.Load += new System.EventHandler(this.FrmGestionAbsence_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).EndInit();
             this.grpAbsence.ResumeLayout(false);
             this.grpAbsence.PerformLayout();
