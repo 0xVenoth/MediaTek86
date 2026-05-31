@@ -87,6 +87,7 @@ namespace MediaTek86.vue
             this.btnConnexion.TabIndex = 5;
             this.btnConnexion.Text = "Se connecter";
             this.btnConnexion.UseVisualStyleBackColor = true;
+            this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             //
             // btnAnnuler
             //
@@ -96,6 +97,7 @@ namespace MediaTek86.vue
             this.btnAnnuler.TabIndex = 6;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             //
             // FrmConnexion
             //
