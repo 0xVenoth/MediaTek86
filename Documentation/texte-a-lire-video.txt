@@ -1,0 +1,93 @@
+==========================================================
+  MEDIATEK86 - TEXTE A LIRE POUR LA VIDEO (5 minutes)
+==========================================================
+
+----------------------------------------------------------
+1) INTRODUCTION  (pendant le lancement de l'application)
+----------------------------------------------------------
+Bonjour. Je vais vous presenter MediaTek86, une application
+de bureau que j'ai developpee en C# avec Windows Forms,
+connectee a une base de donnees MySQL. Elle permet au
+responsable de la mediatheque de gerer son personnel et les
+absences de chaque agent. Elle est construite selon
+l'architecture MVC : modele, vue, controleur, avec une
+couche d'acces aux donnees.
+
+----------------------------------------------------------
+2) CONNEXION
+----------------------------------------------------------
+L'acces est reserve au responsable : il doit saisir un
+login et un mot de passe. Le mot de passe est stocke chiffre
+dans la base, en SHA2 256 bits, jamais en clair.
+
+(taper un mauvais mot de passe)
+Si je me trompe, la connexion est refusee avec un message
+d'erreur.
+
+(login admin / mot de passe mediatek86)
+Avec les bons identifiants, j'accede a la gestion du
+personnel.
+
+----------------------------------------------------------
+3) GESTION DU PERSONNEL
+----------------------------------------------------------
+Voici la liste de tout le personnel : nom, prenom,
+telephone, mail et service - administratif, mediation
+culturelle ou pret.
+
+(Ajouter)
+Je peux ajouter un agent : je clique sur Ajouter, je remplis
+les champs et je choisis le service. Le nom et le prenom
+sont obligatoires. J'enregistre, et il apparait dans la
+liste.
+
+(Modifier)
+Je peux modifier un agent : je le selectionne, ses infos se
+recopient, je change par exemple le telephone, puis
+j'enregistre.
+
+(Supprimer)
+Je peux le supprimer : une confirmation est demandee pour
+eviter toute suppression accidentelle.
+
+----------------------------------------------------------
+4) GESTION DES ABSENCES
+----------------------------------------------------------
+(selectionner un agent puis Gerer les absences)
+Pour gerer les absences d'un agent, je le selectionne et je
+clique sur Gerer les absences. La fenetre affiche ses
+absences : date de debut, date de fin et motif - vacances,
+maladie, motif familial ou conge parental.
+
+(Ajouter une absence)
+J'ajoute une absence en choisissant les dates dans les
+calendriers et un motif.
+
+(date de fin avant date de debut -> montrer le refus)
+L'application controle la saisie : si la date de fin est
+avant la date de debut, elle refuse.
+
+(saisir des dates qui chevauchent une absence existante)
+Elle verifie aussi qu'une absence n'en chevauche pas une
+autre deja enregistree : impossible d'avoir deux absences
+sur la meme periode.
+
+(Modifier puis Supprimer une absence, puis Fermer)
+Je peux aussi modifier une absence, par exemple son motif,
+et la supprimer apres confirmation. Puis je ferme cette
+fenetre.
+
+----------------------------------------------------------
+5) CONCLUSION
+----------------------------------------------------------
+Pour resumer : le responsable se connecte de facon
+securisee, gere le personnel et les absences, avec des
+controles de coherence des donnees. L'application respecte
+l'architecture MVC, les requetes SQL sont parametrees contre
+les injections, et la base est accedee via un utilisateur
+aux droits limites. Merci de votre attention.
+
+==========================================================
+  Rappel : demarrer Wampserver (MySQL) avant d'enregistrer.
+  Identifiants : admin / mediatek86
+==========================================================

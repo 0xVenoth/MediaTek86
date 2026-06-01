@@ -26,6 +26,14 @@ packages/
 # Misc
 *.cache
 *.tmp
+*.stackdump
+
+# Video de demonstration : trop lourde et perso, on ne la met pas sur le depot
+video/
+*.mp4
+*.mov
+*.avi
+*.mkv
 
 # Documentation technique (SHFB) : outils téléchargés et sortie brute
 # (seul le zip de la doc est versionné)
