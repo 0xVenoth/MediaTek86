@@ -39,7 +39,7 @@ erDiagram
         varchar libelle
     }
     ABSENCE {
-        int idpersonnel PK_FK
+        int idpersonnel PK, FK
         datetime datedebut PK
         datetime datefin
         int idmotif FK
